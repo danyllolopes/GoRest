@@ -1,17 +1,22 @@
 <template>
   <section>
     <h1>Usuários</h1> 
-    <div class="pesquisa">
-      <button> <span class="material-icons"> search </span></button>
-      <b-form-input class="pesquisa-input" v-model="text" placeholder="Buscar Usuário"></b-form-input>  
-      <Teste />      
-    </div>
-     
+    <div class="pesquisa">  
+      <v-row>      
+      <v-col cols="10">
+        <button> <span class="material-icons"> search </span></button>
+        <b-form-input class="pesquisa-input" v-model="text" placeholder="Buscar Usuário"></b-form-input>   
+      </v-col>    
+      <v-col cols="2">
+        <AddUser :getUsers="getUsers"/>
+      </v-col>
+      </v-row>        
+    </div>             
       <b-table class="table" striped hover :items="items" :fields="fields">
-        <template v-slot:cell(edit)="data">
+        <template v-slot:cell(edit)="">
           <b-button  class="button" v-b-modal.modal-1>
           <span class="material-icons">edit</span>
-           <Input :data="data.item"/>      
+           <!--<Input :data="data.item"/>-->
         </b-button>         
         </template>
 
@@ -26,14 +31,12 @@
 
 <script>
 import { api } from "../services/api";
-import Input from "./Input.vue";
-import Teste from "./Teste.vue";
+import AddUser from "./AddUser.vue";
 
 export default {
   name: "Users",
-  components: {
-    Input,
-    Teste
+  components: {    
+AddUser
 },
   data() {
     return {
@@ -73,7 +76,7 @@ export default {
   },
 
   methods: {
-    async getUsers() {
+   async getUsers() {
       try {
         const { data } = await api.get("/users");
 
@@ -109,6 +112,7 @@ h1 {
   display: flex;
   gap: 10px;
   margin-bottom: 20px;
+
 }
 .pesquisa button {
   position: absolute;

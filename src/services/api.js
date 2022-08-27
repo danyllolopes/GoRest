@@ -17,5 +17,8 @@ export const api = {
   },
   delete(id){
     return axiosInstance.delete(id)
+  },
+  post(endpoint, data){
+    return axiosInstance.post(endpoint, data)
   }
 }

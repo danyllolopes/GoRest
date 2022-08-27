@@ -8,18 +8,19 @@
 		</div>
 		<h3>Menu</h3>
 		<div class="menu">
-			<router-link to="/users" class="button">
+			<router-link to="/user" class="button">
 				<span class="material-icons">group</span>
 				<span class="text">Usuários</span>
 			</router-link>
-			<router-link to="/list" class="button">
-				<span class="material-icons">description</span>
-				<span class="text">List</span>
-			</router-link>
+	
 				<!-- <router-link to="/" class="button">
 					<span class="material-icons">home</span>
 					<span class="text">Home</span>
 				</router-link>
+						<router-link to="/list" class="button">
+				<span class="material-icons">description</span>
+				<span class="text">List</span>
+			</router-link>
 			<router-link to="/contact" class="button">
 				<span class="material-icons">email</span>
 				<span class="text">Contact</span>

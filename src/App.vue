@@ -1,21 +1,26 @@
 <template>
-	<div class="app">	
-		<Sidebar />	
-    <main>
-		<router-view />
-    </main>
-	</div>
+<v-app>
+  <div class="app">
+    <Sidebar />
+    <v-main>
+      <router-view />
+    </v-main>
+  </div>
+  </v-app>    
 </template>
+
 <script>
 import Sidebar from './components/Sidebar.vue'
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     Sidebar
-  }
-}
-
+  },
+  data: () => ({
+    //
+  }),
+};
 </script>
 <style>
 :root {
@@ -44,11 +49,10 @@ button {
 	background: none;
 }
 .app {
-  display: flex;
+  display: flex !important;
 }
 main {
-  flex: 1 1 0;
-	padding: 2rem;
+  flex: 1 1 0 !important;
+	padding: 2rem !important;
 }
-
 </style>

@@ -6,11 +6,9 @@
 
 <script>
 //import Users from './Users.vue'
-
 export default {
   name: 'HomeView',
   components: {
-
    
  
 }
